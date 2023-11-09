@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNet.Identity
+@using E_learning_platform.Models;
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <p class="navbar-text">Balance: @ViewBag.Balance PLN</p>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li>@Html.ActionLink("Account Settings", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Account Settings" })</li>
+                    <li>@Html.ActionLink("My Courses", "My", "Course", routeValues: null, htmlAttributes: new { title = "My Courses" })</li>
+                    <li>@Html.ActionLink("My Profile", "Details", "Profile", routeValues: null, htmlAttributes: new { title = "My Profile" })</li>
+                    @if (ViewBag.isAdmin == true)
+                    {
+                        <li role="separator" class="divider"></li>
+                        <li>@Html.ActionLink("Roles", "Index", "Role", routeValues: null, htmlAttributes: new { title = "Roles" })</li>
+                        <li>@Html.ActionLink("User List", "List", "Profile", routeValues: null, htmlAttributes: new { title = "User List" })</li>
+                    }
+                </ul>
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,18 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h1 class="text-danger">Error</h1>
+<h2 class="text-danger">An error occurred while processing the page</h2>
+@if (Model != null)
+{
+    <br />
+    <div class="panel panel-danger">
+        <div class="panel-heading">Additional Information</div>
+        <div class="panel-body">
+            @Model.Exception.Message
+        </div>
+    </div>
+}

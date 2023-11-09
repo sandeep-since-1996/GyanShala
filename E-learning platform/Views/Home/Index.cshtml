@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="jumbotron">
+    <h1>What Is E-Learning?</h1>
+    <p class="lead">E-learning is a method of teaching that utilizes the internet. It supports the teaching process using personal computers, smartphones, tablets, and the internet.</p>
+    <p><a href="@Url.Action("Elearning", "Home", null)" class="btn btn-primary btn-lg">Learn More</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">Advantages</h4>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Learn at Your Own Pace</h4>
+                <p class="list-group-item-text">It's up to you when and to what extent you complete the course.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Accessibility</h4>
+                <p class="list-group-item-text">You can access courses whenever you want.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Time Saving</h4>
+                <p class="list-group-item-text">You can complete courses at home.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Choice</h4>
+                <p class="list-group-item-text">It's your choice what you want to learn.</p>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                <h4 class="list-group-item-heading">Utilized Techniques</h4>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Presentations</h4>
+                <p class="list-group-item-text">Each course contains a series of presentations.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Videos</h4>
+                <p class="list-group-item-text">To better understand the subject.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Tests</h4>
+                <p class="list-group-item-text">Allow you to test your knowledge.</p>
+            </a>
+            <a href="#" class="list-group-item">
+                <h4 class="list-group-item-heading">Other Materials</h4>
+                <p class="list-group-item-text">The platform includes many other materials.</p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <h4>Demo Courses</h4>
+        <p>
+            Check what the platform offers.
+        </p>
+        <p><a class="btn btn-default" href="@Url.Action("View", "Category", new { id = 8 })">Go</a></p>
+    </div>
+</div>

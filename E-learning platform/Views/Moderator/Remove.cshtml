@@ -1,0 +1,33 @@
+﻿@model E_learning_platform.Models.ModeratorRemoveViewModel
+@{
+    ViewBag.Title = "Remove Moderator Rights";
+}
+
+<h2>Course</h2>
+
+<h3>Moderator - Revoke Permissions</h3>
+<div>
+    <h4>Are you sure you want to revoke the moderator rights for this course?</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Data
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email) (@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName))
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.ModId)
+        @Html.HiddenFor(model => model.CourseId)
+        <div class="form-actions no-color">
+            <input type="submit" value="Revoke Permissions" class="btn btn-default" /> |
+            @Html.ActionLink("Back", "View", "Course", new { id = Model.CourseId }, null)
+        </div>
+    }
+</div>
