@@ -1,2 +1,2 @@
 # E-learning platform
-An old project done for my Bachelor’s degree.
+An old project done for my MCA degree.
